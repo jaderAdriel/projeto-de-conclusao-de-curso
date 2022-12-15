@@ -1,8 +1,9 @@
-# projeto-de-conclusao-de-curso
+# Trabalho Academico: Plataforma Online De Acompanhamento Nutricional e Físico Corporal. 
 
-Equipe:
 
-Anna Julya Santos Cruz
-Jader Adriel Miranda Souza
-Kleberson Fialho Baleeiro
-Reinaldo Soares Assunção Junior
+Colaboradores
+------------- |
+Anna Julya Santos Cruz |
+Jader Adriel Miranda Souza |
+Kléberson Fialho Baleeiro |
+Reinaldo Soares Assunção Júnior |
