@@ -1,4 +1,18 @@
-# Trabalho Academico: Plataforma Online De Acompanhamento Nutricional e Físico Corporal. 
+# Academic Work: Nutritional and Physical Body Monitoring Platform. 
+
+![GitHub repo size](https://img.shields.io/github/repo-size/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
+
+<p align="center">
+  <img src="https://uploads-ssl.webflow.com/607f5935a97e66317255bcb5/624f5eb7088c66a14c1dcf70_vibo-health-hero.png" width="260" height="auto" alt="exemplo imagem">
+</p>
+
+
+
+> This project enables a platform that offers nutritionists and physical educators a virtual work environment, through which these professionals can assist patients, providing food routines and physical activity plans.
 
 ## 💻 Prerequisites
 
@@ -8,9 +22,9 @@ Before you begin, make sure you've met the following requirements:
 
 ## 🚀 Installing the project
 
-To install the project, follow these steps:
+### To install the project, follow these steps:
 
-In the terminal, clone the project:
+#### In the terminal, clone the project:
 ```
 git clone https://github.com/jaderAdriel/projeto-de-conclusao-de-curso.git
 ```
@@ -18,7 +32,7 @@ Your folder will look like this:
 ```
 .
 ├── ...
-├── code                    # code related files
+├── code *                  # code related files
 │   ├── venv                # python virtual enviroment
 │   ├── requirements.txt    # Dependencies
 │   └── ...                 # etc.
@@ -26,8 +40,8 @@ Your folder will look like this:
 
 ```
 
-For the project to work, run the following commands:
-1. Activate the virtual environment:
+#### For the project to work, inside the 'code' directory run the following commands:
+##### 1. Activate the virtual environment:
 - Linux and macOS:
 ```
 source venv/bin/activate
@@ -37,7 +51,7 @@ source venv/bin/activate
 ```
 venv\Scripts\activate.bat
 ```
-2. install the dependencies:
+##### 2. install the dependencies:
 
 ```
 pip install -r requirements.txt
