@@ -1,7 +1,50 @@
 # Trabalho Academico: Plataforma Online De Acompanhamento Nutricional e Físico Corporal. 
 
+## 💻 Prerequisites
 
-## 🤝 Colaboradores
+Before you begin, make sure you've met the following requirements:
+* You have installed `Python` version `3.8.10` or higher.
+* You have a `<Windows / Linux / Mac>` machine .
+
+## 🚀 Installing the project
+
+To install the project, follow these steps:
+
+In the terminal, clone the project:
+```
+git clone https://github.com/jaderAdriel/projeto-de-conclusao-de-curso.git
+```
+Your folder will look like this:
+```
+.
+├── ...
+├── code                    # code related files
+│   ├── venv                # python virtual enviroment
+│   ├── requirements.txt    # Dependencies
+│   └── ...                 # etc.
+└── README.md
+
+```
+
+For the project to work, run the following commands:
+1. Activate the virtual environment:
+- Linux and macOS:
+```
+source venv/bin/activate
+```
+
+- Windows:
+```
+venv\Scripts\activate.bat
+```
+2. install the dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+
+## 🤝 Contributors
 <table>
   <tr>
     <td align="center">
