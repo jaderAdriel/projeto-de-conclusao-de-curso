@@ -55,3 +55,17 @@ class User(AbstractUser):
     # Change the field username for email
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+
+class Professional(User):
+    local_atendimento = models.CharField(
+        max_length=255,
+        blank=False,
+        null=False
+    )
+
+    codigo_verificador = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False
+    )
