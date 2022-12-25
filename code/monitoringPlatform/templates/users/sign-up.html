@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="assets/style/css/style.css">
-    <script src="https://kit.fontawesome.com/82bb25904d.js" crossorigin="anonymous"></script>
-    <script src="assets/js/layout.js" defer></script>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign In{%endblock%}
+
+{%load static%}
+
+{% block content %}
 
     <div class="wrapper">
 
         <div class="wrapper__content">
 
             <div class="wrapper__image sign-up">
-                <img src="assets/image/cover.png" alt="cover image" class="media">
+                <img src="{% static 'users/image/cover.png' %}" alt="cover image" class="media">
             </div>
 
             
@@ -44,7 +40,7 @@
                                             class="card__input choice__input" 
                                             value="professional"
                                         >
-                                        <img src="assets/icons/work.png" alt="img" class="card__image">
+                                        <img src="{% static 'users/icons/work.png' %}" alt="img" class="card__image">
                                         <label for="userType: professional" class="card__text"> Professional </label>
                                     </button>
             
@@ -56,7 +52,7 @@
                                             class="card__input choice__input" 
                                             value="client"
                                         >
-                                        <img src="assets/icons/user.png" alt="img" class="card__image">
+                                        <img src="{% static 'users/icons/user.png' %}" alt="img" class="card__image">
                                         <label for="userType: client" class="card__text">Client</label>
                                     </button>
 
@@ -219,7 +215,7 @@
                                             value="Nutricionista"
                                             data-next-step-key="professionalType"
                                         >
-                                        <img src="assets/icons/food.png" alt="img" class="card__image">
+                                        <img src="{% static 'users/icons/food.png' %}" alt="img" class="card__image">
                                         <label for="professionalType: Nutricionista" class="card__text"> Nutricionista </label>
                                     </button>
             
@@ -231,7 +227,7 @@
                                             value="Educador Fisico"
                                             data-next-step-key="professionalType"
                                         >
-                                        <img src="assets/icons/gym.png" alt="img" class="card__image">
+                                        <img src="{% static 'users/icons/gym.png' %}" alt="img" class="card__image">
                                         <label for="professionalType: Educador Fisico" class="card__text">Educador Fisico</label>
                                     </button>
 
@@ -282,5 +278,4 @@
         <footer class="footer"></footer>
     </div>
 
-</body>
-</html>
+{% endblock %}

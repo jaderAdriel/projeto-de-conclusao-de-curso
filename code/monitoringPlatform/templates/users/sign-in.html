@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link rel="stylesheet" href="assets/style/css/style.css">
-    <script src="https://kit.fontawesome.com/82bb25904d.js" crossorigin="anonymous"></script>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-    <div class="wrapper">
+{% block title %}Sign In{%endblock%}
+
+{%load static%}
+
+{% block content %}
 
         <div class="wrapper__content">
 
             <div class="wrapper__image sign-in">
-                <img src="assets/image/cover.png" alt="cover image" class="media">
+                <img src="{% static 'users/image/cover.png' %}" alt="cover image" class="media">
             </div>
 
             
@@ -85,7 +80,5 @@
         </div>
 
         <footer class="footer"></footer>
-    </div>
 
-</body>
-</html>
+{% endblock %}
