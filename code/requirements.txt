@@ -1,0 +1,6 @@
+Django==4.0.3
+django-bootstrap-form==3.4
+django-multiselectfield==0.1.12
+urllib3==1.25.8
+virtualenv==20.0.17
+
