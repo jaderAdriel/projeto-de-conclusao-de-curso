@@ -1,8 +1,11 @@
-{% extends '--base.html' %}
+{% extends './--base.html' %}
 {% load static %}
 
-{% block title %}Sign In{%endblock%}
-
+{% block head %}
+<title>Sign Up</title>
+<script src="{% static 'users/js/layout.js' %}" defer></script>
+<script src="{% static 'users/js/validate.js' %}" defer></script>
+{%endblock%}
 {%load static%}
 
 {% block content %}
@@ -26,7 +29,8 @@
 
                     <section class="content">
 
-                        <form action="." method="post" class="form">
+                        <form action="." method="post" class="form" id="signup" novalidate>
+                            {% csrf_token %}
                             <fieldset id="userType" class="section section--active form">
                                 
                                 <p class="section__title">Are you a professional looking for clients or a client looking for professionals?</p>
@@ -104,20 +108,20 @@
                                     
                                     <li>
 
-                                        <span class="forms-control inactive" for="userTel"> This field is required. Use the format +(XX)XXXX-XXXX </span>
+                                        <span class="forms-control inactive" for="userNumber"> This field is required. Use the format +(XX)XXXX-XXXX </span>
 
                                         <div class="field">
                                             <input
                                             type="tel"
-                                            name="userTel"
+                                            name="userNumber"
                                             placeholder=" "
-                                            id="userTel"
+                                            id="userNumber"
                                             pattern="/^[+]{1}[0-9]{11,14}/."
                                             autocomplete="off"
                                             required="true"
                                             aria-required="true" 
                                             >
-                                            <label for="userTel">Cellphone</label>
+                                            <label for="userNumber">Cellphone</label>
                                         </div>
 
                                     </li>
@@ -137,7 +141,7 @@
                                             required="true"
                                             aria-required="true" 
                                             >
-                                            <label for="userCPF"> <abbr title="Cadastro de Pessoas Físicas"> CPF </abbr> ou <abbr title="Cadastro Nacional da Pessoa Jurídica">CNPJ</abbr></label>
+                                            <label for="userCPF"> <abbr title="Cadastro de Pessoas Físicas"> CPF </abbr></label>
                                         </div>
 
                                     </li>
@@ -201,6 +205,7 @@
                                 </ul>
                                 <aside >
                                     <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
+                                    <button type="submit" class="submit"><p>Sign Up</p></button>
                                 </aside>
                             </fieldset>
 
@@ -221,7 +226,7 @@
             
                                     <button  type="button" class="card step-choice choice">
                                         <input 
-                                            name="userType" 
+                                            name="professionalType" 
                                             id="professionalType: Educador Fisico" type="radio" 
                                             class="card__input choice__input" 
                                             value="Educador Fisico"
@@ -240,26 +245,24 @@
                                         <div class="field">
                                             <input
                                             type="text"
-                                            name="userCode"
+                                            name="professionalCode"
                                             placeholder=" "
-                                            id="userCode"
+                                            id="code"
                                             autocomplete="off"
                                             required="true"
                                             aria-required="true" 
                                             >
-                                            <label for="userCode">Inscrição</label>
+                                            <label for="code">Inscrição</label>
                                         </div>
-                                        <span class="forms-control inactive" for="userCode"> 
+                                        <span class="forms-control inactive" for="code"> 
                                             Esse campo é obrigatorio
                                         </span>
                                     </li>
                                 </ul>
+                                <aside id="submit" class="">
+                                    <button type="submit" class="submit"><p>Sign Up</p></button>
+                                </aside>
                             </fieldset>
-
-                            <aside id="submit" class="section section--inactive form">
-                                <button type="submit" class="submit"><p>Sign Up</p></button>
-                            </aside>
-
                         
                         </form>
 

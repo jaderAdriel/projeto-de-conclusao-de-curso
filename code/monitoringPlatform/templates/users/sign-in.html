@@ -1,7 +1,9 @@
 {% extends './--base.html' %}
 {% load static %}
 
-{% block title %}Sign In{%endblock%}
+{% block head %}
+<title>Sign In</title>
+{%endblock%}
 
 
 {% block content %}
@@ -35,6 +37,7 @@
                         <span class="divider"></span>
 
                         <form action="." method="post" class="form">
+                            {% csrf_token %}
                             <ul>
                                 
                                 <li class="field">
@@ -46,7 +49,7 @@
                                         id="userEmail"
                                         autocomplete="off"
                                     >
-                                    <label for="userEmail">E-mail ou cellphone</label>
+                                    <label for="userEmail">E-mail address</label>
         
                                 </li>
                                 <li class="field">
