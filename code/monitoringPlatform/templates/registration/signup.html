@@ -146,7 +146,6 @@
 
                                     </li>
 
-                                    
                                     <li >
 
                                         <span class="forms-control inactive" for="userPassword"> 
@@ -203,44 +202,37 @@
                                         <label for="terms">I agree with the terms</label>
                                     </li>
                                 </ul>
-                                <aside >
-                                    <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
-                                    <button type="submit" class="submit"><p>Sign Up</p></button>
-                                </aside>
+                                
                             </fieldset>
 
                             <fieldset id="professionalType" class="section section--inactive form">
 
                                 <div class="options" data-required="true">
-                                    <button  type="button" class="card choice step-choice">
+                                    <button  type="button" class="card">
                                        <input 
                                             name="professionalType" 
                                             id="professionalType: Nutricionista" type="radio" 
-                                            class="card__input choice__input" 
+                                            class="card__input " 
                                             value="Nutricionista"
-                                            data-next-step-key="professionalType"
                                         >
                                         <img src="{% static 'users/icons/food.png' %}" alt="img" class="card__image">
                                         <label for="professionalType: Nutricionista" class="card__text"> Nutricionista </label>
                                     </button>
             
-                                    <button  type="button" class="card step-choice choice">
+                                    <button  type="button" class="card">
                                         <input 
                                             name="professionalType" 
                                             id="professionalType: Educador Fisico" type="radio" 
-                                            class="card__input choice__input" 
+                                            class="card__input " 
                                             value="Educador Fisico"
-                                            data-next-step-key="professionalType"
                                         >
                                         <img src="{% static 'users/icons/gym.png' %}" alt="img" class="card__image">
                                         <label for="professionalType: Educador Fisico" class="card__text">Educador Fisico</label>
                                     </button>
 
                                 </div>
-                            </fieldset>
 
-                            <fieldset id="professionalCode" class="section section--inactive form">
-                                <ul>
+                                <ul class="field-list">
                                     <li>
                                         <div class="field">
                                             <input
@@ -258,11 +250,31 @@
                                             Esse campo é obrigatorio
                                         </span>
                                     </li>
+                                    <li>
+                                        <div class="field">
+                                            <input
+                                            type="text"
+                                            name="placeOfCare"
+                                            placeholder=" "
+                                            id="placeOfCare"
+                                            autocomplete="off"
+                                            required="true"
+                                            aria-required="true" 
+                                            >
+                                            <label for="placeOfCare">Local de atendimento</label>
+                                        </div>
+                                        <span class="forms-control inactive" for="placeOfCare"> 
+                                            Esse campo é obrigatorio
+                                        </span>
+                                    </li>
                                 </ul>
-                                <aside id="submit" class="">
-                                    <button type="submit" class="submit"><p>Sign Up</p></button>
-                                </aside>
+                                
                             </fieldset>
+
+                            <aside class="info inactive">
+                                <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
+                                <button type="submit" class="submit"><p>Sign Up</p></button>
+                            </aside>
                         
                         </form>
 
