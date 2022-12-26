@@ -157,6 +157,11 @@ body, html, .wrapper {
   background-color: #FFF;
 }
 
+.field-list {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .form {
   padding: 0.5em 0 0.5em 0;
 }
@@ -226,9 +231,12 @@ body, html, .wrapper {
   font-size: var(--label-fontSize);
   z-index: 1;
 }
-.form .info {
-  padding: 1em 0 1em 0;
+.form .info.inactive {
+  display: none;
+}
+.form .info.active {
   display: flex;
+  padding: 1em 0 1em 0;
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;

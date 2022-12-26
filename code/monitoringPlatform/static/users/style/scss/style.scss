@@ -174,6 +174,11 @@ body, html, .wrapper {
     }
 }
 
+.field-list {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 .form {
     padding: 0.5em 0 0.5em 0;
     .field {
@@ -267,12 +272,18 @@ body, html, .wrapper {
     }
     
     .info {
-        padding: 1em 0 1em 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-        gap: 1em;
+        
+        &.inactive {
+            display: none;
+        }
+        &.active {
+            display: flex;
+            padding: 1em 0 1em 0;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
     }
 
     #forgotPassword {
