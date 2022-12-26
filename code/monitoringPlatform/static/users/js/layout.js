@@ -113,9 +113,8 @@ forward.addEventListener('click', () => {
     
 });
 
+
 main()
-
-
 
 /* functions */
 
@@ -129,7 +128,7 @@ function main() {
 
 
 function nextSection(nextSectionID, ...props) {
-    console.log(flowMap.get(flow).get(currentSection.id), nextSectionID, flow);
+    
     const previous = document.querySelector('.section--active');
     currentSection = document.getElementById(nextSectionID);
     
