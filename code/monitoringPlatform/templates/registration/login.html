@@ -40,30 +40,23 @@
                             {% csrf_token %}
                             <ul>
                                 
-                                <li class="field">
-                                    <input 
-                                        type="email" 
-                                        name="userEmail"
-                                        placeholder=" "
-                                        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-                                        id="userEmail"
-                                        autocomplete="off"
-                                    >
-                                    <label for="userEmail">E-mail address</label>
+                                <li>
+                                    <div class="field">
+                                        {{ form.username }}
+                                        <label for="{{ form.username.id_for_label }}">Email address:</label>
+                                    </div>
+                                    {{ form.username.errors }}
         
                                 </li>
-                                <li class="field">
-                                    <input 
-                                        type="password" 
-                                        name="userPassword" 
-                                        placeholder=" "
-                                        id="userPassword"
-                                        title="Must have at least 8 char long"
-                                        autocomplete="off"
-                                    >
-                                    <label for="userPassword">Password</label>
-        
+
+                                <li>
+                                    <div class="field">
+                                        {{ form.password }}
+                                        <label for="{{ form.password.id_for_label }}">Password:</label>
+                                    </div>
+                                    {{ form.password.errors }}
                                 </li>
+                                
                                 <p><a href="" id="forgotPassword">Forgot your Password?</a></p>
                                 
                             </ul>
@@ -83,4 +76,9 @@
 
         <footer class="footer"></footer>
 
+        <script>
+            document.querySelectorAll('.field input').forEach(e => {
+                e.setAttribute('placeholder', ' ');
+            })
+        </script>
 {% endblock %}
