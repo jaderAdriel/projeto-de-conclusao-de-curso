@@ -3,10 +3,6 @@ let client = [
         current: 'client',
         next: 'info'
     },
-    {
-        current: 'info',
-        next: 'submit'
-    },
 ];
 let professional = [
     {
@@ -17,14 +13,6 @@ let professional = [
         current: 'info',
         next: 'professionalType'
     },
-    {
-        current: 'professionalType',
-        next: 'professionalCode'
-    },
-    {
-        current: 'professionalCode',
-        next: 'submit'
-    },
 
 ];
 
@@ -32,10 +20,6 @@ let admin = [
     {
         current: 'admin',
         next: 'info'
-    },
-    {
-        current: 'info',
-        next: 'submit'
     },
 ];
 
@@ -136,6 +120,20 @@ function nextSection(nextSectionID, ...props) {
     const [isComingBack] = props;
     if (! isComingBack === true) {
         sectionFlow.push(previous.id);
+    }
+
+    console.log(nextSectionID, flow);
+    if ((nextSectionID === "professionalType" && flow === "professional") || 
+        (nextSectionID === "info" && flow !== "professional")) {
+        changeState(document.querySelector('.info'), {
+            old: "inactive",
+            new: "active"
+        });
+    } else {
+        changeState(document.querySelector('.info'), {
+            new: "inactive",
+            old: "active"
+        });
     }
 
     checkActionsVisibility( currentSection )

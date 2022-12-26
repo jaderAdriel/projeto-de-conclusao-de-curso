@@ -13,7 +13,7 @@ signup.addEventListener("submit", function(event) {
 
     let isValid = validateData(currentSection);
 
-    // if (!isValid) return
+    if (!isValid) return
     
     const userType = signup.querySelector('input[name="userType"]:checked').value;
 
@@ -60,7 +60,6 @@ function sendData( options ) {
         },
         body: options.data
       })
-      .then(response => response.json())
       .then(data => {
         console.log(data);
       });
