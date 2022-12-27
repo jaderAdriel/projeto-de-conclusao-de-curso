@@ -2,7 +2,7 @@
 from django.shortcuts import render
 
 from Users.forms import AdminForm, ClientForm, ProfessionalForm
-
+from Users.models import AuthenticateRequest
 # Create your views here.
 
 
@@ -53,8 +53,11 @@ def registerProfessional( request ):
         form = ProfessionalForm( request.POST )
 
         if form.is_valid():
-            form.save()
-            
+            form.save(commit=False)
+            form.authenticated = False
+            new = form.save()
+            registerAuthenticateRequest( new )
+
     else:
         form = ProfessionalForm()
 
@@ -63,3 +66,8 @@ def registerProfessional( request ):
         }
     
     return render(request, 'registration/professional.html', context)
+
+
+def registerAuthenticateRequest( instance ):
+    request = AuthenticateRequest( professional=instance )
+    request.save()
