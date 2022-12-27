@@ -66,7 +66,7 @@ class User( AbstractBaseUser ):
 
 
 class Admin( User ):
-
+    
     def authenticateProfessional() :
         ...
 
