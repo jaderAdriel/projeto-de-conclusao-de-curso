@@ -33,7 +33,6 @@ Your folder will look like this:
 .
 ├── ...
 ├── code *                  # code related files
-│   ├── venv                # python virtual enviroment
 │   ├── requirements.txt    # Dependencies
 │   └── ...                 # etc.
 └── README.md
@@ -41,15 +40,25 @@ Your folder will look like this:
 ```
 
 #### For the project to work, inside the 'code' directory run the following commands:
-##### 1. Activate the virtual environment:
-- Linux and macOS:
+##### 1. Create and use a virtual environment:
+###### Linux and macOS:
+- Create the virtual environment:
+```
+python3 -m venv env
+```
+- Activate  the venv:
 ```
 source venv/bin/activate
 ```
 
-- Windows:
+###### Windows
+- Create the virtual environment:
 ```
-venv\Scripts\activate.bat
+py -m venv env
+```
+- Activate  the venv:
+```
+env\Scripts\activate.bat
 ```
 ##### 2. install the dependencies:
 
