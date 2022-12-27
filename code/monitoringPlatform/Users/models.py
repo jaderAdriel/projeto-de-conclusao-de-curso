@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 
 
-class UserManager(BaseUserManager):
+class UserManager( BaseUserManager ):
     use_in_migrations = True
 
     def _create_user(self, email, password, **extra_fields):
@@ -63,13 +63,21 @@ class User( AbstractBaseUser ):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+
+
 class Admin( User ):
-    ...
+
+    def authenticateProfessional() :
+        ...
+
+
 
 class Client ( User ):
     ...
 
-class Professional(User):
+
+
+class Professional( User ):
     validator_code = models.CharField(
         max_length=250,
         blank=False,
@@ -96,4 +104,22 @@ class Professional(User):
         default=NUTRITIONIST,
         blank=False,
         null=False
+    )
+    
+    # by default, professional is not authenticated
+    authenticated =  models.BooleanField(
+        default=False,
+        blank=True,
+        null=False
+    )
+
+
+class AuthenticateRequest( models.Model ):
+    professional = models.ForeignKey(
+        Professional,
+        on_delete=models.CASCADE
+    )
+
+    request_date = models.DateTimeField(
+        auto_now_add=True
     )
