@@ -1,24 +1,24 @@
-from django.contrib.auth.forms import AuthenticationForm, UsernameField
+from django.forms import ModelForm
 
-from django import forms
 
-class UserLoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super(UserLoginForm, self).__init__(*args, **kwargs)
+from Users.models import Admin, Client, Professional
 
-    email = UsernameField(widget=forms.TextInput(
-        attrs={
-            'autocomplete': 'false',
-            'placeholder': '',
-            'id' : 'email',
-            'name' : 'email'
-            }
-        ))
-    password = forms.CharField(widget=forms.PasswordInput(
-        attrs={
-            'autocomplete': 'false',
-            'placeholder': '',
-            'id' : 'password',
-            'name' : 'password'
-        }
-    ))
+class RegisterAdminForm(ModelForm):
+
+    class Meta:
+        model = Admin
+        exclude = ['last_login'] 
+
+
+class RegisterClientForm(ModelForm):
+
+    class Meta:
+        model = Client
+        exclude = ['last_login'] 
+
+
+class RegisterProfessionalForm(ModelForm):
+
+    class Meta:
+        model = Professional
+        exclude = ['last_login'] 
