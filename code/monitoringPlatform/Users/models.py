@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.base_user import BaseUserManager
+from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 
 
 class UserManager(BaseUserManager):
@@ -35,9 +34,11 @@ class UserManager(BaseUserManager):
 
 
 
-class User(AbstractUser):
+class User( AbstractBaseUser ):
     username = None
-    email = models.EmailField(('email address'), unique=True)
+
+    email = models.EmailField(('Email address'), unique=True)
+
     name = models.CharField(
         max_length=250,
         blank=False,
@@ -50,22 +51,49 @@ class User(AbstractUser):
         null=False
     )
 
+    phone_number = models.CharField(
+        max_length=250,
+        blank=False,
+        null=False
+    )
+
     objects = UserManager()
 
     # Change the field username for email
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+class Admin( User ):
+    ...
+
+class Client ( User ):
+    ...
 
 class Professional(User):
-    local_atendimento = models.CharField(
+    validator_code = models.CharField(
+        max_length=250,
+        blank=False,
+        null=False
+    )
+
+    place_of_care = models.CharField(
         max_length=255,
         blank=False,
         null=False
     )
 
-    codigo_verificador = models.CharField(
-        max_length=100,
+    NUTRITIONIST = 'N'
+    PHYSICAL_EDUCATOR = 'PE'
+
+    PROFESSIONAL_TYPE_CHOICES = [
+        (NUTRITIONIST, 'NUTRITIONIST'),
+        (PHYSICAL_EDUCATOR, 'PHYSICAL EDUCATOR'),
+    ]
+
+    professional_type =  models.CharField(
+        max_length=2,
+        choices= PROFESSIONAL_TYPE_CHOICES,
+        default=NUTRITIONIST,
         blank=False,
         null=False
     )
