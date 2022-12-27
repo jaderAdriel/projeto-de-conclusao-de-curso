@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     # http://127.0.0.1:8000/users/register-client/
-    path('register-admin/', views.signup, name='signup'),
+    path('register-admin/', views.registerAdmin, name='signup'),
     # http://127.0.0.1:8000/users/register-client/
     path('register-client/', views.registerClient, name='registerClient'),
     # http://127.0.0.1:8000/users/register-professional/
