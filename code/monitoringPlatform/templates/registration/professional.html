@@ -10,61 +10,74 @@
         {% csrf_token %}
 
             <li>
+                {{ form.name.errors }}
                 <div class="field">
                     {{ form.name }}
                     {{ form.name.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
+
             <li>
+                {{ form.email.errors }}
                 <div class="field">
                     {{ form.email }}
                     {{ form.email.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
+
             <li>
+                {{ form.cpf.errors }}
                 <div class="field">
                     {{ form.cpf }}
                     {{ form.cpf.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
+
             <li>
+                {{ form.phone_number.errors }}
                 <div class="field">
                     {{ form.phone_number }}
                     {{ form.phone_number.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
+
             <li>
+                {{ form.validator_code.errors }}
                 <div class="field">
                     {{ form.validator_code }}
                     {{ form.validator_code.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
+
             <li>
+                {{ form.place_of_care.errors }}
                 <div class="field">
                     {{ form.place_of_care }}
                     {{ form.place_of_care.label_tag }}
                 </div>
-                {{ field.errors }}
-            </li>
-            <li>
-                <div class="select-field field">
-                    {{ form.professional_type }}
-                </div>
-                
-                {{ field.errors }}
             </li>
 
             <li>
+                {{ form.professional_type.errors }}
+                <div class="select-field field">
+                    {{ form.professional_type }}
+                </div>
+            </li>
+
+            <li>
+                {{ form.password.errors }}
                 <div class="field">
                     {{ form.password }}
                     {{ form.password.label_tag }}
                 </div>
-                {{ field.errors }}
+            </li>
+            
+            <li>
+                {{ form.password_confirmation.errors }}
+                <div class="field">
+                    {{ form.password_confirmation }}
+                    {{ form.password_confirmation.label_tag }}
+                </div>
             </li>
         
         <aside class="info">

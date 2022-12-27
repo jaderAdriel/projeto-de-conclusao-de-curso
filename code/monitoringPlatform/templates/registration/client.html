@@ -11,11 +11,11 @@
 
         {% for field in form %}
             <li>
+                {{ field.errors }}
                 <div class="field">
                     {{ field }}
                     {{ field.label_tag }}
                 </div>
-                {{ field.errors }}
             </li>
         {% endfor %}
         
