@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from Users.forms import AdminForm, ClientForm, ProfessionalForm
 from Users.models import AuthenticateRequest
@@ -14,6 +14,7 @@ def registerClient( request ):
 
         if form.is_valid():
             form.save()
+            return redirect('/users/login/')
 
     else:
         form = ClientForm()
@@ -34,6 +35,7 @@ def registerAdmin( request ):
 
         if form.is_valid():
             form.save()
+            return redirect('/users/login/')
 
     else:
         form = AdminForm()
@@ -57,6 +59,8 @@ def registerProfessional( request ):
             form.authenticated = False
             new = form.save()
             registerAuthenticateRequest( new )
+
+            return redirect('/users/login/')
 
     else:
         form = ProfessionalForm()
