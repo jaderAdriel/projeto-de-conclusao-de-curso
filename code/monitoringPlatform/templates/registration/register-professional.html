@@ -1,0 +1,77 @@
+{% extends './base-form.html' %}
+{% load static %}
+
+{% block title %} Sign up as a professional {% endblock %}
+
+{% block form %}
+    <title>Sign up</title>
+    
+    <form action="." method="POST" class="form">
+        {% csrf_token %}
+
+            <li>
+                <div class="field">
+                    {{ form.name }}
+                    {{ form.name.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="field">
+                    {{ form.email }}
+                    {{ form.email.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="field">
+                    {{ form.cpf }}
+                    {{ form.cpf.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="field">
+                    {{ form.phone_number }}
+                    {{ form.phone_number.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="field">
+                    {{ form.validator_code }}
+                    {{ form.validator_code.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="field">
+                    {{ form.place_of_care }}
+                    {{ form.place_of_care.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+            <li>
+                <div class="select-field field">
+                    {{ form.professional_type }}
+                </div>
+                
+                {{ field.errors }}
+            </li>
+
+            <li>
+                <div class="field">
+                    {{ form.password }}
+                    {{ form.password.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+        
+        <aside class="info">
+            <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
+            <button type="submit" class="submit"><p>Sign Up</p></button>
+        </aside>
+    
+    </form>
+
+{% endblock %}

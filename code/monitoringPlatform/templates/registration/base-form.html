@@ -1,0 +1,40 @@
+{% extends './../base.html' %}
+{% load static %}
+
+{% block head %}
+<script src="{% static 'js/layout.js' %}" defer></script>
+{%endblock%}
+
+{% block content %}
+
+    <div class="wrapper__content">
+
+        <div class="wrapper__image sign-up">
+            <img src="{% static 'image/cover.png' %}" alt="cover image" class="media">
+        </div>
+
+        
+        <section class="wrapper__main">
+
+            <main class="main-content">
+
+                <header class="header">
+                    <h1 class="header__title"> {% block title %} {% endblock %}</h1>
+                </header>
+
+                <section class="content">
+
+                    {%block form%}
+
+	                {% endblock %}
+
+                </section>
+                
+            </main>
+            
+        </section>
+        
+    </div>
+
+
+{% endblock %}

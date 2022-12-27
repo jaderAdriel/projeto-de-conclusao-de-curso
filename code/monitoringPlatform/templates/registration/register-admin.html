@@ -1,0 +1,30 @@
+{% extends './base-form.html' %}
+{% load static %}
+
+{% block title %} Sign up as a admin {% endblock %}
+
+
+{% block form %}
+    <title>Sign up</title>
+    
+    <form action="." method="POST" class="form">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <li>
+                <div class="field">
+                    {{ field }}
+                    {{ field.label_tag }}
+                </div>
+                {{ field.errors }}
+            </li>
+        {% endfor %}
+        
+        <aside class="info actions inactive">
+            <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
+            <button type="submit" class="submit"><p>Sign Up</p></button>
+        </aside>
+    
+    </form>
+
+{% endblock %}
