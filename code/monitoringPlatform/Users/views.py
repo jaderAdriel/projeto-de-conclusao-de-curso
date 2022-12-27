@@ -1,40 +1,28 @@
 
 from django.shortcuts import render
 
-from django.http import JsonResponse
-
-from django.shortcuts import redirect, render
-
-from Users.forms import RegisterAdminForm, RegisterClientForm, RegisterProfessionalForm
+from Users.forms import AdminForm, ClientForm, ProfessionalForm
 
 # Create your views here.
 
-def login( request ):
-    ...
-
-#--------------------------------------------------------------------
-
-def signup( request ):
-
-    return render(request, 'registration/signup.html')
-
-#--------------------------------------------------------------------
 
 def registerClient( request ):
 
     if request.method == "POST":
 
-        form = RegisterClientForm( request.POST )
+        form = ClientForm( request.POST )
 
         if form.is_valid():
             form.save()
 
+    else:
+        form = ClientForm()
 
     context = {
-            'form' : RegisterClientForm
+            'form' : form
         }
     
-    return render(request, 'registration/register-client.html', context)
+    return render(request, 'registration/client.html', context)
 
 #--------------------------------------------------------------------
 
@@ -42,17 +30,19 @@ def registerAdmin( request ):
 
     if request.method == "POST":
 
-        form = RegisterAdminForm( request.POST )
+        form = AdminForm( request.POST )
 
         if form.is_valid():
             form.save()
 
+    else:
+        form = AdminForm()
 
     context = {
-            'form' : RegisterAdminForm
+            'form' : form
         }
     
-    return render(request, 'registration/register-admin.html', context)
+    return render(request, 'registration/admin.html', context)
 
 #--------------------------------------------------------------------
 
@@ -60,14 +50,16 @@ def registerProfessional( request ):
     
     if request.method == "POST":
 
-        form = RegisterProfessionalForm( request.POST )
+        form = ProfessionalForm( request.POST )
 
         if form.is_valid():
             form.save()
-
+            
+    else:
+        form = ProfessionalForm()
 
     context = {
-            'form' : RegisterProfessionalForm
+            'form' : form
         }
     
-    return render(request, 'registration/register-professional.html', context)
+    return render(request, 'registration/professional.html', context)
