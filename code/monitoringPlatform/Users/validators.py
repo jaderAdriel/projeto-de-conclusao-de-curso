@@ -32,7 +32,7 @@ class CpfValidator():
             self.cleaned = valid_cpf
             return True
         
-        self.error = "Invalid cpf. " + err_formating_msg
+        self.error = "Invalid cpf. Insert a valid cpf number"
         return False
 
     def __clear_formatting(self, cpf):
