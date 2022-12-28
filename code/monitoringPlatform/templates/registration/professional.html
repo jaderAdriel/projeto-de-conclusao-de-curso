@@ -8,8 +8,8 @@
     
     <form action="." method="POST" class="form">
         {% csrf_token %}
-
-            <li>
+        <ul>
+            <li class="field-wrapper">
                 {{ form.name.errors }}
                 <div class="field">
                     {{ form.name }}
@@ -17,7 +17,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.email.errors }}
                 <div class="field">
                     {{ form.email }}
@@ -25,7 +25,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.cpf.errors }}
                 <div class="field">
                     {{ form.cpf }}
@@ -33,7 +33,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.phone_number.errors }}
                 <div class="field">
                     {{ form.phone_number }}
@@ -41,7 +41,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.validator_code.errors }}
                 <div class="field">
                     {{ form.validator_code }}
@@ -49,7 +49,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.place_of_care.errors }}
                 <div class="field">
                     {{ form.place_of_care }}
@@ -57,14 +57,14 @@
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.professional_type.errors }}
                 <div class="select-field field">
                     {{ form.professional_type }}
                 </div>
             </li>
 
-            <li>
+            <li class="field-wrapper">
                 {{ form.password.errors }}
                 <div class="field">
                     {{ form.password }}
@@ -72,14 +72,14 @@
                 </div>
             </li>
             
-            <li>
+            <li class="field-wrapper">
                 {{ form.password_confirmation.errors }}
                 <div class="field">
                     {{ form.password_confirmation }}
                     {{ form.password_confirmation.label_tag }}
                 </div>
             </li>
-        
+        </ul>
         <aside class="info">
             <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
             <button type="submit" class="submit"><p>Sign Up</p></button>

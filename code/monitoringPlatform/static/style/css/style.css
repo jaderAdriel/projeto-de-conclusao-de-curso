@@ -239,6 +239,18 @@ body, html, .wrapper {
   flex-wrap: wrap;
   gap: 1em;
 }
+.form .field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.form .errorlist {
+  color: darkred;
+}
+.form .errorlist li::before {
+  content: "*";
+  padding-left: 0.4em;
+}
 .form #forgotPassword {
   font-size: 0.95em;
   font-weight: 400;

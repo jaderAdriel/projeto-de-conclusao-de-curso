@@ -9,15 +9,17 @@
     <form action="." method="POST" class="form">
         {% csrf_token %}
 
-        {% for field in form %}
-            <li>
-                {{ field.errors }}
-                <div class="field">
-                    {{ field }}
-                    {{ field.label_tag }}
-                </div>
-            </li>
-        {% endfor %}
+        <ul>
+            {% for field in form %}
+                <li class="field-wrapper">
+                    {{ field.errors }}
+                    <div class="field">
+                        {{ field }}
+                        {{ field.label_tag }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
         
         <aside class="info">
             <p>Already have a account? <a href="sign-in.html">Sign In</a></p>
