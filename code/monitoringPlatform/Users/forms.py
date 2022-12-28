@@ -3,7 +3,7 @@ from django import forms
 
 from Users.models import Admin, Client, Professional
 
-
+from Users.validators import CpfValidator
 
 class UserForm( forms.ModelForm ):
     
@@ -14,14 +14,22 @@ class UserForm( forms.ModelForm ):
     def clean(self):
         cleaned_data = super().clean()
 
+        cpf = cleaned_data.get("cpf")
         password = cleaned_data.get("password")
         passwordConfirmation = cleaned_data.get("password_confirmation")
+
+        if cpf:
+            cpf = CpfValidator(cpf)
+            if not cpf.is_valid():
+                self.add_error('cpf', cpf.error)
+            
 
         if password != passwordConfirmation:
             err = ValidationError("passwords are not same", code="invalid")
             self.add_error('password_confirmation', err)
         
 
+    
 
 
 class AdminForm( UserForm ):
