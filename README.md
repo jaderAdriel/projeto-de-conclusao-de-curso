@@ -1,4 +1,4 @@
-# Academic Work: Nutritional and Physical Body Monitoring Platform. 
+# NuPhy: A platform for nutritionists and physical educators
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/jaderAdriel/projeto-de-conclusao-de-curso?style=for-the-badge)
